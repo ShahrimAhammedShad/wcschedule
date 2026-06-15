@@ -1,0 +1,9 @@
+{
+  "name": "world-cup-2026-bd-schedule",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dynamic FIFA World Cup 2026 schedule and results website for Bangladesh time.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
