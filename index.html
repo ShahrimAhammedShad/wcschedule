@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>World Cup 2026 BD Schedule</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="topbar" aria-label="Primary">
+        <div class="brand">
+          <span class="brand-mark">26</span>
+          <span>World Cup BD</span>
+        </div>
+        <div class="clock" id="bdClock">বাংলাদেশ সময়</div>
+      </nav>
+
+      <section class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">FIFA World Cup 2026</p>
+          <h1>বাংলাদেশ সময় অনুযায়ী ম্যাচ schedule ও result</h1>
+          <p class="lead">Past match result, live status, future kickoff, group filter আর search সহ dynamic website.</p>
+          <div class="hero-actions">
+            <a href="#matches" class="primary-action">ম্যাচ দেখুন</a>
+            <span class="developer">Developed by: Shahrim Ahammed Shad</span>
+          </div>
+        </div>
+        <div class="spotlight" aria-label="Tournament summary">
+          <div>
+            <span class="spotlight-label">Next Match</span>
+            <strong id="nextMatch">Loading...</strong>
+          </div>
+          <div class="spotlight-row">
+            <span id="completedCount">0 results</span>
+            <span id="futureCount">0 upcoming</span>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="stats-band" aria-label="Quick stats">
+        <div>
+          <span class="stat-number" id="totalMatches">0</span>
+          <span class="stat-label">Total Matches</span>
+        </div>
+        <div>
+          <span class="stat-number" id="todayMatches">0</span>
+          <span class="stat-label">আজ BD Time</span>
+        </div>
+        <div>
+          <span class="stat-number" id="liveMatches">0</span>
+          <span class="stat-label">Live / Running</span>
+        </div>
+        <div>
+          <span class="stat-number">BDT</span>
+          <span class="stat-label">Asia/Dhaka</span>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Schedule controls">
+        <div class="search-wrap">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="Team, group, channel খুঁজুন">
+        </div>
+        <div class="segmented" role="tablist" aria-label="Match status">
+          <button class="active" data-filter="all">সব</button>
+          <button data-filter="completed">Result</button>
+          <button data-filter="today">আজ</button>
+          <button data-filter="scheduled">Upcoming</button>
+        </div>
+        <select id="groupFilter" aria-label="Group filter">
+          <option value="all">All groups</option>
+        </select>
+      </section>
+
+      <section class="content-grid" id="matches">
+        <aside class="source-panel">
+          <h2>Data server</h2>
+          <p>Frontend এই project-এর local backend API থেকে data নিচ্ছে: <code>/api/matches</code></p>
+          <dl>
+            <div>
+              <dt>Source</dt>
+              <dd><a id="sourceLink" href="#" target="_blank" rel="noreferrer">Loading</a></dd>
+            </div>
+            <div>
+              <dt>Last sync</dt>
+              <dd id="lastSync">Loading</dd>
+            </div>
+          </dl>
+        </aside>
+
+        <section class="match-list" aria-live="polite">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Schedule</p>
+              <h2>সব ম্যাচ</h2>
+            </div>
+            <span id="visibleCount">0 shown</span>
+          </div>
+          <div id="matchCards" class="cards"></div>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <span>Developed by: Shahrim Ahammed Shad</span>
+      <span>Times shown in Bangladesh Time</span>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
